@@ -1,0 +1,92 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/matthew/source_cs/ZakupkiParser/ZakupkiParser.csproj": {}
+  },
+  "projects": {
+    "/home/matthew/source_cs/ZakupkiParser/ZakupkiParser.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/matthew/source_cs/ZakupkiParser/ZakupkiParser.csproj",
+        "projectName": "ZakupkiParser",
+        "projectPath": "/home/matthew/source_cs/ZakupkiParser/ZakupkiParser.csproj",
+        "packagesPath": "/home/matthew/.nuget/packages/",
+        "outputPath": "/home/matthew/source_cs/ZakupkiParser/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/matthew/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AngleSharp": {
+              "target": "Package",
+              "version": "[1.1.2, )"
+            },
+            "NewtonSoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.0, 8.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[8.0.0, 8.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.0, 8.0.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
