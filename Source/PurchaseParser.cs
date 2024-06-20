@@ -20,7 +20,6 @@ public class PurchaseParser : IParser
         {
             purchase = new()
             {
-                RegNum = GetTextField(item, ".highlightColor"),
                 Price = GetPrice(item),
                 PurchaseDetails = GetTextField(item, ".registry-entry__body-value"),
                 Customer = GetTextField(item, ".registry-entry__body-href a"),
@@ -29,6 +28,16 @@ public class PurchaseParser : IParser
                 PurchaseCardLink = "https://zakupki.gov.ru" 
                     + item.QuerySelector(".registry-entry__header-mid__number a")?.GetAttribute("href").Trim('\n', ' ')
             };
+
+            string rn = 
+                GetTextField(item, ".highlightColor") 
+                ?? 
+                string.Join("", 
+                    GetTextField(item, ".registry-entry__header-mid__number a")
+                    .Where(x => x >= '0' && x <= '9')
+                    );
+            purchase.RegNum = rn;
+
             var dateElem = item.QuerySelectorAll(".data-block__value");
 
             purchase.PublicationDate = DateOnly.Parse(dateElem[0].Text());
@@ -49,13 +58,13 @@ public class PurchaseParser : IParser
             return 0;
         return price;
     }
-    string GetTextField(IElement element, string selector)
+    string? GetTextField(IElement element, string selector)
     {
         return element
             .QuerySelector(selector)?
             .Text()?
             .Trim('\n', ' ')
             .Replace("\n", "")
-            .Collapse();
+            .Collapse() ??  null;
     }
 }

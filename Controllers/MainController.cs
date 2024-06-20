@@ -14,7 +14,7 @@ public class MainController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> GetPurchas([FromBody] RequestBody body)
     {
-        var res =  await worker.GetPurchasesAsync(body.purchaseId);
+        var res = await worker.GetPurchasesAsync(body.purchaseId);
         return Ok(JsonConvert.SerializeObject(res));
     }
 }
