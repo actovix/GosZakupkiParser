@@ -1,5 +1,6 @@
 bin/
 obj/
+Logs/
 appsettings.json
 appsettings.Development.json
 *.txt
