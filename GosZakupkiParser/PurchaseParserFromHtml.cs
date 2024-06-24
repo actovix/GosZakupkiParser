@@ -49,7 +49,7 @@ public class PurchaseParserFromHtml
     }
     decimal GetPrice(IElement element)
     {
-        string? s = string.Join("", GetTextField(element, ".price-block__value")
+        string? s = string.Join("", GetTextField(element, ".price-block__value") ?? ""
             .Replace("&nbsp;", "")
             .Where(x => (x >= '0' && x <= '9') || x == ','));
         if (!decimal.TryParse(s, out decimal price))
