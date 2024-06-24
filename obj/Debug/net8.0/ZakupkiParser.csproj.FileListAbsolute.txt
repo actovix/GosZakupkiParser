@@ -33,3 +33,4 @@
 /home/matthew/source_cs/ZakupkiParser/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /home/matthew/source_cs/ZakupkiParser/obj/Debug/net8.0/ZakupkiParser.MvcApplicationPartsAssemblyInfo.cs
 /home/matthew/source_cs/ZakupkiParser/obj/Debug/net8.0/ZakupkiParser.sourcelink.json
+/home/matthew/source_cs/ZakupkiParser/bin/Debug/net8.0/Serilog.dll

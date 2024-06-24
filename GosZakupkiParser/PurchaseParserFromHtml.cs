@@ -1,14 +1,12 @@
-using AngleSharp.Browser;
 using AngleSharp.Dom;
-using AngleSharp.Dom.Events;
 using AngleSharp.Html.Dom;
 using AngleSharp.Text;
 using ZakupkiParser.Models;
 using ZakupkiParser.Source;
 
-namespace ZakupkiParser.Source;
+namespace ZakupkiParser.GosZakupkiParser;
 
-public class PurchaseParser : IParser
+public class PurchaseParserFromHtml
 {
     public List<Purchase> Parse(IHtmlDocument htmlDocument)
     {

@@ -1,11 +1,10 @@
 namespace ZakupkiParser.Source;
 
-public class HttpRequestBuilder(string src)
+public class HttpRequestBuilder
 {
-    private readonly string source = src;
-    public HttpRequestMessage Create(HttpMethod method, string regNum)
+    public static HttpRequestMessage Create(HttpMethod method, string src, string regNum)
     {
-        HttpRequestMessage httpRequestMessage = new(method, source.Replace("{regnum}", regNum));
+        HttpRequestMessage httpRequestMessage = new(method, src.Replace("{regnum}", regNum));
         httpRequestMessage.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
         httpRequestMessage.Headers.Add("Accept-Encoding", "gzip, deflate, br");
         httpRequestMessage.Headers.Add("Accept-Language", "en-US,en;q=0.9");

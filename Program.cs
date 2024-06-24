@@ -1,8 +1,20 @@
+using ZakupkiParser.Source;
+using System.Net;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient()
+                .ConfigureHttpClientDefaults(cb =>
+                    cb.ConfigurePrimaryHttpMessageHandler(x => new HttpClientHandler()
+                    {
+                        AutomaticDecompression =
+                            DecompressionMethods.GZip | DecompressionMethods.Deflate | DecompressionMethods.Brotli
+                    }));
+
+builder.Services.AddScoped<IHtmlLoader, HtmlLoader>();
 
 var app = builder.Build();
 
@@ -12,6 +24,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseHttpsRedirection();
 app.MapControllers();
 
 app.Run();
