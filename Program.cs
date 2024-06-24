@@ -1,5 +1,6 @@
 using ZakupkiParser.Source;
 using System.Net;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +14,9 @@ builder.Services.AddHttpClient()
                         AutomaticDecompression =
                             DecompressionMethods.GZip | DecompressionMethods.Deflate | DecompressionMethods.Brotli
                     }));
-
 builder.Services.AddScoped<IHtmlLoader, HtmlLoader>();
+builder.Host.UseSerilog((context, configuration) =>
+    configuration.ReadFrom.Configuration(context.Configuration));
 
 var app = builder.Build();
 
@@ -24,7 +26,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
-app.MapControllers();
+app.MapControllers();   
 
 app.Run();

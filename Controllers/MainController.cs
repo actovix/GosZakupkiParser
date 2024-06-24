@@ -26,11 +26,12 @@ public class MainController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> GetPurchasesAsync([FromBody] RequestBody body)
     {
-        if(!ModelState.IsValid)
+        if (!ModelState.IsValid)
             return BadRequest(ModelState);
-            
+
         var res = await parser.GetPurchasesAsync(body.purchaseId);
-        
+        logger.LogInformation(DateTime.Now + " | downloaded " + res.Count + " elements");
+
         return Ok(JsonConvert.SerializeObject(res));
     }
 }
