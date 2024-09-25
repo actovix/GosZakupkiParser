@@ -6,6 +6,8 @@ namespace ZakupkiParser.GosZakupkiParser;
 
 public class PurchaseParser
 {
+
+    
     private readonly PurchaseParserFromHtml purchaseParserFromHtml;
     private readonly IHtmlLoader htmlLoader;
     private readonly string url;
