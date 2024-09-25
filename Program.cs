@@ -19,6 +19,8 @@ builder.Services.AddHttpClient()
                             DecompressionMethods.GZip | DecompressionMethods.Deflate | DecompressionMethods.Brotli
                     }));
 builder.Services.AddScoped<IHtmlLoader, HtmlLoader>();
+
+
 builder.Host.UseSerilog((context, configuration) =>
     configuration.ReadFrom.Configuration(context.Configuration));
 
