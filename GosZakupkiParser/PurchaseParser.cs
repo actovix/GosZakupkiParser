@@ -22,6 +22,8 @@ public class PurchaseParser
         List<Purchase> purchaseList = [];
         var source = await htmlLoader.GetPageByIdAsync(url, id);
 
+        var zhopa = "";
+
         if (string.IsNullOrEmpty(source))
                 return purchaseList;
 
