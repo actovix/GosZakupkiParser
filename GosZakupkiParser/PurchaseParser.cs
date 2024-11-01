@@ -22,7 +22,7 @@ public class PurchaseParser
         List<Purchase> purchaseList = [];
         var source = await htmlLoader.GetPageByIdAsync(url, id);
 
-        var zhopa = "";
+        var zhopa = "zzz";
 
         if (string.IsNullOrEmpty(source))
                 return purchaseList;
