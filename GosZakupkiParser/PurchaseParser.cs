@@ -6,6 +6,8 @@ namespace ZakupkiParser.GosZakupkiParser;
 
 public class PurchaseParser
 {
+
+    
     private readonly PurchaseParserFromHtml purchaseParserFromHtml;
     private readonly IHtmlLoader htmlLoader;
     private readonly string url;
@@ -19,6 +21,8 @@ public class PurchaseParser
     {
         List<Purchase> purchaseList = [];
         var source = await htmlLoader.GetPageByIdAsync(url, id);
+
+        var zhopa = "zzz";
 
         if (string.IsNullOrEmpty(source))
                 return purchaseList;

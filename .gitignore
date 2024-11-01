@@ -6,3 +6,5 @@ appsettings.Development.json
 *.txt
 ZakupkiParser.Tests/
 TestData.txt
+
+aaaa
